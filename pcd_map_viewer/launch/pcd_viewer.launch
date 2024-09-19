@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="pcd_map_viewer" type="pcd_map_viewer" name="pcd_map_viewer" output="screen"/>
+    
+      <!-- Node for RViz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pcd_map_viewer)/rviz/rviz_config.rviz" />
+</launch>
