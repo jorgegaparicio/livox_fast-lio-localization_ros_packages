@@ -34,7 +34,10 @@ private:
         
         map2d_pose_msg.pose.position.x = global_pose.pose.position.x;
         map2d_pose_msg.pose.position.y = global_pose.pose.position.y;
-        //map2d_pose_msg.pose = global_pose.pose.pose;
+        map2d_pose_msg.pose.orientation.x = 0;
+        map2d_pose_msg.pose.orientation.y = 0;
+        map2d_pose_msg.pose.orientation.z = global_pose.pose.orientation.z;
+        map2d_pose_msg.pose.orientation.w = global_pose.pose.orientation.w;
 
         map2d_pose_pub.publish(map2d_pose_msg);
     }
