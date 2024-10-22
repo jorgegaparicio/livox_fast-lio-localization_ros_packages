@@ -6,8 +6,6 @@
 #include <iostream>
 
 int main(int argc, char** argv){
-    //Path to .pcd file.
-    cv::String map_path = "/home/grvc/catkin_ws/src/pcd_map_viewer/maps/scans_obstaculos.pcd";
     ros::init(argc, argv, "pcd_map_viewer");
     ros::NodeHandle nh;
     std::cout << "Using default map. To change map, replace the following file, maintaining the name and location:\n /home/grvc/catkin_ws/src/pcd_map_viewer/maps/scans_obstaculos.pcd" << std::endl;
@@ -17,7 +15,7 @@ int main(int argc, char** argv){
 
     // Load PCD file
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-    if (pcl::io::loadPCDFile<pcl::PointXYZ>(map_path, *cloud) == -1){
+    if (pcl::io::loadPCDFile<pcl::PointXYZ>("/home/grvc/catkin_ws/src/pcd_map_viewer/maps/scans_obstaculos.pcd", *cloud) == -1){
         ROS_ERROR("Couldn't read the PCD file");
         return -1;
     }
