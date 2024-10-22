@@ -19,7 +19,6 @@ private:
     ros::Subscriber map3d_sub;
     ros::Publisher map2d_pose_pub;
 
-    //nav_msgs::Odometry map2d_pose;
     geometry_msgs::PoseStamped global_pose;
 
     void mapCallback(const geometry_msgs::PoseStamped::ConstPtr &msg) {
@@ -31,7 +30,7 @@ private:
 
         geometry_msgs::PoseStamped map2d_pose_msg;
         map2d_pose_msg.header = global_pose.header;
-        
+        // Translate the 3D pose into 2d coordinates, including xy translation and rotation around the Z axis
         map2d_pose_msg.pose.position.x = global_pose.pose.position.x;
         map2d_pose_msg.pose.position.y = global_pose.pose.position.y;
         map2d_pose_msg.pose.orientation.x = 0;
