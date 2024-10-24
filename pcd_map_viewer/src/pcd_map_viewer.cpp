@@ -17,6 +17,7 @@ int main(int argc, char** argv){
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
     if (pcl::io::loadPCDFile<pcl::PointXYZ>("/home/grvc/catkin_ws/src/pcd_map_viewer/maps/scans_obstaculos.pcd", *cloud) == -1){
         ROS_ERROR("Couldn't read the PCD file");
+        std::cout << "To change map, replace the following file, maintaining the name and location:\n /home/grvc/catkin_ws/src/pcd_map_viewer/maps/scans_obstaculos.pcd" << std::endl;
         return -1;
     }
 
