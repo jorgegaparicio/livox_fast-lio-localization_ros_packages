@@ -6,6 +6,7 @@ These packages are to be installed in the Ground Control Station (GCS).
 Calculates the position of the drone refered to the map's system of reference, based on the Odometry information from the FAST LIO LOCALIZATION and the map origin.
 
 ## global_pose_to_flat_map
+IMPORTANT: You need to create an empty folder in order to compile: /global_pose_to_flat_map/include
 Takes the pose calculated by odom_to_global and publishes a /flat_map_pose topic with the required information for a 2d representation of the position of the drone.
 
 ## pcd_map_viewer
